@@ -1,14 +1,14 @@
-const dataLength = document.querySelector('input')
+const input = document.querySelector("#validation-input")
 // console.log(dataLength);
 
-dataLength.addEventListener ('blur', isInputBlur)
+input.addEventListener ('blur', isInputBlur)
 
 function isInputBlur () {
-    if(dataLength.value.length <= 6) {
-        dataLength.classList.remove ('invalid')
-        dataLength.classList.add ('valid')
+    if(+input.value.length === +input.dataset.length) {
+        input.classList.remove ('invalid')
+        input.classList.add ('valid')
     } else {
-        dataLength.classList.remove ('valid')
-        dataLength.classList.add ('invalid')
+        input.classList.remove ('valid')
+        input.classList.add ('invalid')
     }
 }
